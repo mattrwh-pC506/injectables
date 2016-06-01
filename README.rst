@@ -3,9 +3,6 @@ Injectables
 
 This is a super lightweight library for creating dependency injectables
 ::
-    from injectables import injectable
-
-
     @injectable
     def how_are_you():
       return "how_are_you?"
@@ -22,8 +19,14 @@ This is a super lightweight library for creating dependency injectables
       print (im_fine)
       print ('good to hear')
 
-
+    
+    # run function as injectable, which resolves and injects all dependencies first
     conversation()
     # how are you?
     # I am fine
+    # good to hear
+
+    # override injection flow and call normally
+    conversation(override=True, im_fine="hey!!!!")
+    # hey!!!!
     # good to hear

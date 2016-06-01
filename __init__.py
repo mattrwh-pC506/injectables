@@ -20,7 +20,9 @@ def injectable(func):
 
         return func(*args)
 
-    def wrapper():
+    def wrapper(override=False, *args, **kwargs):
+        if override:
+            return func(*args, **kwargs)
         return run_func(func.__name__)
 
     if not hasattr(injectable, 'registry'):
@@ -57,5 +59,5 @@ if __name__ == '__main__':
       print ('good to hear')
 
 
-    conversation()
+    conversation(override=True, im_fine="hey!!!!")
 
