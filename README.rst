@@ -1,8 +1,7 @@
 Injectables
 =======================
 
-This is a super lightweight library for creating dependency injectables
-----::
+This is a super lightweight library for creating dependency injectables::
     from injectables import injectable
 
 
