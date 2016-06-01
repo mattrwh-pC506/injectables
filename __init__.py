@@ -23,7 +23,9 @@ def injectable(func):
     def wrapper(override=False, *args, **kwargs):
         if override:
             return func(*args, **kwargs)
-        return run_func(func.__name__)
+        resolved = run_func(func.__name__)
+        injectable.calls = {}
+        return resolved
 
     if not hasattr(injectable, 'registry'):
         injectable.registry = {}
@@ -59,5 +61,8 @@ if __name__ == '__main__':
       print ('good to hear')
 
 
+    # run function as injectable, which resolves and injects all dependencies first
+    conversation()
+    # override injection flow and call normally
     conversation(override=True, im_fine="hey!!!!")
 
