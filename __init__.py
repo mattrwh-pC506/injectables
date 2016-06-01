@@ -41,21 +41,21 @@ Example usage
 if __name__ == '__main__':
 
     @injectable
-    def a():
-        return "hey!"
+    def how_are_you():
+      return "how_are_you?"
 
 
     @injectable
-    def b(a):
-        return a
-
+    def im_fine(how_are_you):
+      print(how_are_you)
+      return 'I am fine'
 
     @injectable
-    def c(b):
-        print (b)
+    def conversation(im_fine):
+      print (im_fine)
+      print ('good to hear')
 
-
-    c()
+    conversation()
 
 
 
