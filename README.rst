@@ -3,7 +3,6 @@ Injectables
 
 This is a super lightweight library for creating dependency injectables
 ----::
-
     from injectables import injectable
 
 
@@ -17,13 +16,14 @@ This is a super lightweight library for creating dependency injectables
       print(how_are_you)
       return 'I am fine'
 
+
     @injectable
     def conversation(im_fine):
       print (im_fine)
       print ('good to hear')
 
-    conversation()
 
+    conversation()
     # how are you?
     # I am fine
     # good to hear
